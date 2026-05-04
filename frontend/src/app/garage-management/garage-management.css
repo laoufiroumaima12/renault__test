@@ -1,0 +1,9 @@
+.grid-garage {
+    width: 100%; 
+    height: 500px; 
+    justify-self: center
+}  
+
+.btn-garage{
+    margin: 5px;
+}

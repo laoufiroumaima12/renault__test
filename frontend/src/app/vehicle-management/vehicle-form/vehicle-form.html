@@ -1,0 +1,44 @@
+
+<div class="modal-header">
+  <h4 class="modal-title">{{title}}</h4>
+  <button type="button" class="btn-close" (click)="cancel()"></button>
+</div>
+
+<div class="modal-body">
+  <form>
+    <div class="mb-3">
+      <label>Brand</label>
+      <input class="form-control"
+             [(ngModel)]="vehicle.brand"
+             name="name"
+             
+  [ngModelOptions]="{ standalone: true }"
+>
+    </div>
+
+    <div class="mb-3">
+      <label>Fabrication Year</label>
+      <input class="form-control"
+             [(ngModel)]="vehicle.fabricationYear"
+             name="email"
+             [ngModelOptions]="{ standalone: true }">
+    </div>
+
+    <div class="mb-3">
+      <label>Fuel Type</label>
+      <select class="form-control"
+              [(ngModel)]="vehicle.fuelType"
+              name="fuelType"
+              [ngModelOptions]="{ standalone: true }">
+        <ng-container *ngFor="let fuelType of fuelTypeList">
+          <option [value]="fuelType">{{ fuelType }}</option>
+        </ng-container>
+      </select>
+    </div>
+  </form>
+</div>
+
+<div class="modal-footer">
+  <button class="btn btn-secondary" (click)="cancel()">Cancel</button>
+  <button class="btn btn-primary" (click)="submit()">Submit</button>
+</div>

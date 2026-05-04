@@ -1,0 +1,47 @@
+
+<div class="modal-header">
+  <h4 class="modal-title">{{title}}</h4>
+  <button type="button" class="btn-close" (click)="cancel()"></button>
+</div>
+
+<div class="modal-body">
+  <form>
+    <div class="mb-3">
+      <label>Nom</label>
+      <input class="form-control"
+             [(ngModel)]="garage.name"
+             name="name"
+             
+  [ngModelOptions]="{ standalone: true }"
+>
+    </div>
+
+    <div class="mb-3">
+      <label>Email</label>
+      <input class="form-control"
+             [(ngModel)]="garage.email"
+             name="email"
+             [ngModelOptions]="{ standalone: true }">
+    </div>
+
+    <div class="mb-3">
+      <label>Téléphone</label>
+      <input class="form-control"
+             [(ngModel)]="garage.phoneNumber"
+             name="phone"
+             [ngModelOptions]="{ standalone: true }">
+    </div>
+    <div class="mb-3">
+      <label>Adresse</label>
+      <input class="form-control"
+             [(ngModel)]="garage.address"
+             name="address"
+             [ngModelOptions]="{ standalone: true }">
+    </div>
+  </form>
+</div>
+
+<div class="modal-footer">
+  <button class="btn btn-secondary" (click)="cancel()">Cancel</button>
+  <button class="btn btn-primary" (click)="submit()">Submit</button>
+</div>

@@ -1,0 +1,24 @@
+<div style="margin-left: 15%; margin-top: 10px; margin-bottom: 13px;">
+  <button (click)="addVehicle()" [disabled]="selectedRow">Add new vehicle</button>
+  <button (click)="editVehicle()" [disabled]="!selectedRow" class="btn-garage">Edit vehicle</button>
+  <button (click)="deleteVehicle()" [disabled]="!selectedRow" class="btn-garage">Delete vehicle</button>
+    <button (click)="goTogarageList()" class="btn-garage">Back to garage</button>
+</div>
+
+
+<ag-grid-angular
+  
+  class="ag-theme-alpine grid-garage"    
+  [theme]="'legacy'"
+  [rowData]="rowData"
+  [columnDefs]="columnDefs"
+  [defaultColDef]="defaultColDef"
+  [suppressRowClickSelection]="true"
+  [getRowId]="getRowId"
+  [rowSelection]="'single'"
+  [rowModelType]="'clientSide'"
+  (gridReady)="onGridReady($event)"
+  (selectionChanged)="onSelectionChanged()">
+  >
+
+</ag-grid-angular>
